@@ -1,0 +1,46 @@
+
+
+    FUNCTION Isortho(var a ,b  : ARRAY_OF INTEGER ) : INTEGER
+    VAR
+       n,m, i,j:INTEGER ;
+        p:=INTEGER;
+    BEGIN
+        n := a.length ;
+        m := b.length ;
+        FOR i FROM 0 TO  n STEP 1 DO
+        FOR j FROM 0 TO  m  STEP 1 DO
+               IF (n=m) THEN
+                   p =  p + (a[i] * b[j]) ;
+               ELSE
+                   write("not orthonall two vectors")
+               END_IF
+
+        END_FOR
+        RETURN p ;
+    END
+
+
+ALGORITHM vector_ortho
+VAR
+    v1,v2 = arr : integer[];
+    k;INTEGER
+    result:INTEGER;
+BEGIN
+    
+     k: read_size() ;
+  read_array(n,v1);
+
+  //array number two
+  k: read_size() ;
+  read_array(n,v2);
+
+  resul= Isortho(v1,v2) ;
+  IF (result=0) THEN
+      write("these vectors are orthogonal") ;
+  ELSE
+          write("these vectors aren't  orthogonal") ;
+
+  END_IF
+
+
+END

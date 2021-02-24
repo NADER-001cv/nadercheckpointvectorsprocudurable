@@ -1,0 +1,38 @@
+PROCEDURE Isortho(var arr1 , arr2 : ARRAY_OF INTEGER; var ps INTEGER)
+VAR
+    i, ps: INTEGER ;
+BEGIN
+i:= 0 ;
+ps: = 0;
+    IF (arr1.length <> arr2.length) THEN
+        write(" n'exist work by two vectors") ;
+ 
+    END_IF
+    WHILE (i<= arr1.length || i <= arr2.length) DO
+        ps:= ps + (arr1[i] * arr2[i]) ;
+        i++ ;
+    END_WHILE
+END
+
+
+
+ALGORITHM vectors_ortho
+VAR
+     tab1, tab2  : ARRAY_OF INTEGER[];
+    n,m :INTEGER ;
+    ps: INTEGER ;
+BEGIN
+//array number one
+  n: read_size() ;
+  read_array(n,tab1);
+
+  //array number two
+  m: read_size() ;
+  read_array(n,tab2);
+  Isortho(tab1,tab2,ps);
+  IF (ps = 0) THEN
+      write("two vectors are orthogonal ") ;
+  ELSE
+      write("two vectors aren't orthogonal ") ;
+  END_IF
+END
